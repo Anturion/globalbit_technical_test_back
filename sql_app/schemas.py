@@ -10,7 +10,9 @@ class UserCreate(BaseModel):
 
 
 class User(BaseModel):
+    document: int
     name: str
+    phone_number: str
     email: str
 
     class Config:

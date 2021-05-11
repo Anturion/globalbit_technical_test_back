@@ -1,2 +1,8 @@
 #environment
 globalbit_back
+
+#database
+sql_app.db
+
+#cache
+__pycache__

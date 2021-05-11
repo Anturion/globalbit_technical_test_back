@@ -23,7 +23,8 @@ def get_db():
 @app.post("/users/")
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db)):
     db_user = crud.get_user_by_email(db, email=user.email)
-    if db_user:
+    db_user_document = crud.get_user_by_document(db, document=user.document)
+    if db_user or db_user_document:
         raise HTTPException(status_code=400, detail="Email already registered")
     return crud.create_user(db=db, user=user)
 
