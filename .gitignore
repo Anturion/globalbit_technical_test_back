@@ -1,6 +1,6 @@
 #environment
 globalbit_back
-
+.env
 #database
 sql_app.db
 
