@@ -1,5 +1,7 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
+from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, Float
 from sqlalchemy.sql.sqltypes import DateTime
+from sqlalchemy_utils.types.choice import ChoiceType
+
 
 from .database import Base
 
@@ -25,3 +27,21 @@ class User(Base):
     is_admin=Column(Boolean)
     created_at=Column(DateTime)
     updated_at=Column(DateTime)
+    token_session=Column(String(100))
+    
+
+class Payments(Base):
+
+    TYPES =[
+        (u'rechazada', u'Rechazada'),
+        (u'en-proceso', u'En proceso'),
+        (u'aprobada', u'Aprobada')
+    ]
+    
+    __tablename__="payments"
+
+    id = Column(Integer, primary_key=True)
+    id_client = Column(Integer, ForeignKey('users.id'))
+    amount = Column(Float)
+    date = Column(DateTime)
+    state = Column(ChoiceType(TYPES))

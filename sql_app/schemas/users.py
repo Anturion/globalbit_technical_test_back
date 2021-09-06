@@ -1,9 +1,8 @@
-from datetime import date, datetime
-from typing import List, Optional
+from datetime import datetime
 from pydantic import BaseModel
 
-
 class UserCreate(BaseModel):
+
     document: int
     names: str
     last_names: str
@@ -18,6 +17,7 @@ class UserCreate(BaseModel):
 
 
 class User(BaseModel):
+    
     document: int
     names: str
     last_names: str
@@ -34,10 +34,11 @@ class User(BaseModel):
     is_admin: bool=False
     created_at: datetime
     updated_at: datetime
+    token_session: str
 
     class Config:
         orm_mode = True
-
+    
 class UserLogin(BaseModel):
 
     email:str
