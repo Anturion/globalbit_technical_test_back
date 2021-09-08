@@ -2,8 +2,8 @@
 globalbit_back
 .env
 #database
-sql_app.db
+app.db
 
 #cache
 __pycache__
-sql_app/__pycache__
+app/__pycache__

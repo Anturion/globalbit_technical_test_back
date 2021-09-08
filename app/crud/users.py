@@ -2,7 +2,7 @@ import random
 import string
 from datetime import datetime
 from sqlalchemy.orm import Session
-from sql_app import models, security, schemas
+from app import models, security, schemas
 
 def get_user(db: Session, user_id: int):
     return db.query(models.User).order_by(models.User.id).offset(0).limit(100).filter_by(models.User.id == user_id)

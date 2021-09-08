@@ -2,7 +2,7 @@ import random
 import string
 from datetime import datetime
 from sqlalchemy.orm import Session
-from sql_app import models, security, schemas, crud
+from app import models, security, schemas, crud
 
 def create_payment(db: Session, payment: schemas.payments.PaymentCreate):
     print(payment.email)

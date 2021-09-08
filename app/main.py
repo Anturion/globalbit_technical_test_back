@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from datetime import datetime, timedelta
 from fastapi import Depends, FastAPI, HTTPException, status
 from sqlalchemy.orm import Session
-from sql_app import crud, schemas
+from app import crud, schemas
 from . import models, security
 from .database import SessionLocal, engine_azure
 
