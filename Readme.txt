@@ -27,7 +27,7 @@ pip install -r requirements.txt
 Una se termine de instalar las dependencias, solo hace falta correr el siguiente comando:
 
 ```shell
-uvicorn sql_app.main:app --reload --port 5000 
+uvicorn app.main:app --reload --port 5000 
 ```
 
 Con esto el servidor estará corriendo en la ruta http://127.0.0.1:5000.
@@ -37,7 +37,7 @@ el siguiente enlace en el navegador una vez este corriendo la instancia. http://
 
 Esta es la ruta a la cual el front ejecutará las peticiones.
 
-Finalmente al correr la instancia del back end se genera una base de datos sql con el nombre sql_app.db,
+Finalmente al correr la instancia del back end se genera una base de datos sql con el nombre app.db,
 donde se guardarán los datos enviados desde el front.
 
 
